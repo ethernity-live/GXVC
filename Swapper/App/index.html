@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GXPC Swapper</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="container" style="margin-top:18px">
+  <img src="logo.jpg" style="width:165px">
+  <h1>GXPC Swapper</h1>
+
+<h3 id='swapStatus'>Loading system...</h3>
+<h4>Follow the <a id='followContract' target='_blank'>contract address</a></h4>
+<div id="responses" style="min-height:200px"></div>
+
+
+
+
+<input id="new_address" type="text" maxlength="90" size="80" placeholder="Token address">
+<br><br>
+<button id="updOldTok" value="updOldTok" onclick="SwapFrontEnd.updateOldToken( document.getElementById('new_address').value )">Update oldToken</button>
+<br><br>
+<input id="owner" type="text" maxlength="90" size="80" placeholder="Owner address">
+<br><br>
+<button id="updNewTok" value="updNewTok" onclick="SwapFrontEnd.updateNewToken( document.getElementById('new_address').value , document.getElementById('owner').value )">Update newToken</button>
+<br><br><br>
+<button id="flushethers" value="flushethers" onclick="SwapFrontEnd.flushEthers()">Flush ethers</button>
+
+
+  <h3>System Information</h3>
+  <br>
+  <h5>Coinbase address:                 <strong id="coinbase">                      </strong></h5>
+  <h5>Coinbase Ether balance:           <strong id="coinbaseBalance">               </strong></h5>
+  <h5>Current block number:             <strong id="blockNumber">                   </strong></h5>
+
+</body>
+
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+<script src="app.js"></script>
+
+</html>
